@@ -1,0 +1,667 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow,noarchive"><title>葉山の家 水回り選び</title><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><style>
+/* 作り: 上に「何の画面か」と切り替えのタブ。1画面に1つの設備だけを出す。各設備は「12月までに決めること → 早見表 → メーカーごとのカード → アイに聞くこと」の順 */
+:root{
+  --bg:#f5f7f6; --surface:#ffffff; --ink:#17201f; --muted:#55625f; --line:#d5ddda;
+  --accent:#0a6a6e; --accent-soft:#e1efee; --camp:#94540f; --camp-soft:#f6ebdc;
+  --good:#2a6b39; --good-soft:#e5f1e7; --bad:#9e3729; --bad-soft:#f8e6e2; --chip:#edf1ef;
+  --font: system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic","Meiryo",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1413; --surface:#151e1d; --ink:#e2eae7; --muted:#9cafaa; --line:#2b3836;
+  --accent:#5bc2c3; --accent-soft:#16302f; --camp:#e6a95c; --camp-soft:#33261a;
+  --good:#82cc90; --good-soft:#18301e; --bad:#f2978a; --bad-soft:#37201c; --chip:#1c2928; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1413; --surface:#151e1d; --ink:#e2eae7; --muted:#9cafaa; --line:#2b3836;
+  --accent:#5bc2c3; --accent-soft:#16302f; --camp:#e6a95c; --camp-soft:#33261a;
+  --good:#82cc90; --good-soft:#18301e; --bad:#f2978a; --bad-soft:#37201c; --chip:#1c2928; color-scheme:dark}
+html{font-size:clamp(20px,4.6vw,48px)}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1rem;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 3rem}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1100px;margin:0 auto}
+header.top{padding-block:1rem .4rem}
+h1{font-size:1.5rem;line-height:1.3;margin:0;text-wrap:balance}
+.lead{color:var(--muted);margin:.3rem 0 0}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:.35rem;overflow-x:auto;padding-block:.5rem;border-bottom:1px solid var(--line);margin-bottom:1rem}
+nav.tabs a{flex:0 0 auto;text-decoration:none;color:var(--ink);background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:.25rem .8rem;font-size:.95rem}
+nav.tabs a[aria-current="page"]{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:700}
+nav.tabs a:focus-visible,button:focus-visible{outline:3px solid var(--camp);outline-offset:2px}
+section.view{display:flex;flex-direction:column;gap:1.2rem}
+h2{font-size:1.3rem;line-height:1.35;margin:0;text-wrap:balance}
+h3{font-size:1.1rem;line-height:1.4;margin:0}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:.3rem}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.6rem}
+.decide{border:2px solid var(--accent);background:var(--accent-soft)}
+.decide h3::before{content:"12月までに決める";display:block;font-size:.8rem;letter-spacing:.06em;color:var(--accent);font-weight:700}
+.now{border:2px solid var(--camp);background:var(--camp-soft)}
+.now h3::before{content:"11/30までに決める";display:block;font-size:.8rem;letter-spacing:.06em;color:var(--camp);font-weight:700}
+.alert{border:2px solid var(--camp);background:var(--camp-soft)}
+.house{color:var(--muted)}
+.house strong{color:var(--ink)}
+.key{font-weight:700}
+.note{color:var(--muted);font-size:.9rem}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:separate;border-spacing:0;font-size:.85rem;line-height:1.55;min-width:42rem}
+th,td{text-align:left;vertical-align:top;padding:.5rem .6rem;border-bottom:1px solid var(--line)}
+thead th{background:var(--chip);font-weight:700}
+tbody th{position:sticky;left:0;background:var(--surface);font-weight:700;min-width:6.5rem;border-right:1px solid var(--line)}
+thead th:first-child{position:sticky;left:0;z-index:1}
+tr:last-child th,tr:last-child td{border-bottom:none}
+.plus{color:var(--bad);font-weight:700}
+.minus{color:var(--good);font-weight:700}
+.camp{display:inline-block;font-size:.78rem;font-weight:700;color:var(--camp);border:1px solid var(--camp);border-radius:6px;padding:0 .35rem;margin-right:.3rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:.9rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.55rem;min-width:0}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.card-head h3{min-width:0}
+.maker{display:block;font-size:.8rem;color:var(--muted);font-weight:400}
+.star{flex:0 0 auto;font:inherit;font-size:.85rem;background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem;cursor:pointer}
+.star[aria-pressed="true"]{background:var(--camp);border-color:var(--camp);color:var(--bg);font-weight:700}
+.label{font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.voice{list-style:none;padding:0}
+.voice li{padding:.35rem .55rem;border-radius:8px;font-size:.92rem}
+.voice li.g{background:var(--good-soft)}
+.voice li.b{background:var(--bad-soft)}
+.voice li::before{font-weight:700;margin-right:.3rem}
+.voice li.g::before{content:"良い";color:var(--good)}
+.voice li.b::before{content:"不満";color:var(--bad)}
+.voice a,.src a{color:var(--accent);white-space:nowrap}
+.who{color:var(--muted);font-size:.85rem}
+.fit{font-weight:700}
+.for{border-top:1px dashed var(--line);padding-top:.5rem}
+.for::before{content:"こんな人に向く　";font-weight:700;color:var(--accent)}
+.mat{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.7rem}
+.mat div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.7rem .8rem;display:flex;flex-direction:column;gap:.3rem;font-size:.92rem}
+.mat b{font-size:1rem}
+.ask ol li{padding-left:.1rem}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.6rem}
+.fig svg{width:100%;max-width:34rem;height:auto;display:block;margin:0 auto}
+.fig .tub{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.fig .wash{fill:var(--chip);stroke:var(--muted);stroke-width:2}
+.fig text{fill:var(--ink);font-family:var(--font);font-size:15px}
+.fig .t-strong{font-weight:700;font-size:17px}
+#star-list:empty::before{content:"まだ印はありません。各カードの「☆ 気になる」を押すと、ここに並びます（この端末にだけ残ります）。";color:var(--muted)}
+#star-list{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+#star-list a{display:inline-block;text-decoration:none;color:var(--ink);background:var(--camp-soft);border:1px solid var(--camp);border-radius:999px;padding:.1rem .6rem;font-size:.9rem}
+footer{margin-top:2rem;color:var(--muted);font-size:.85rem;display:flex;flex-direction:column;gap:.3rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <h1>葉山の家 水回り選び</h1>
+  <p class="lead">キッチン・お風呂・トイレ・洗面台を、アイ工務店で選べる物から決めるためのページ。色はまだ決めません。12月中に決めるのは、設計に響く大きさと形です。</p>
+</header>
+
+<nav class="tabs" aria-label="設備の切り替え">
+  <a href="#top" data-view="top">まず</a>
+  <a href="#kitchen" data-view="kitchen">キッチン</a>
+  <a href="#bath" data-view="bath">お風呂</a>
+  <a href="#toilet" data-view="toilet">トイレ</a>
+  <a href="#sink" data-view="sink">洗面台</a>
+</nav>
+
+<!-- ===================== まず ===================== -->
+<section class="view" id="v-top">
+  <div class="box now">
+    <h3>キャンペーンで選ぶ物（11/26 の契約の時）</h3>
+    <p><span class="key">① キッチンのメーカーを1つ</span>：タカラ・LIXIL・トクラス・クリナップから。タカラだけ「10〜11月の契約限定・特別価格」と書いてあります。</p>
+    <p><span class="key">② 期間限定から1つ</span>（11月の契約は1つだけ）：</p>
+    <ul>
+      <li>お風呂4つ：タカラ／LIXIL AX／トクラス エブリィ／TOTO サザナ</li>
+      <li>洗面台2つ：トクラス ノーレ／EIDAI アクアージュフロート</li>
+      <li>トイレ2つ：LIXIL ベーシアハーモJ＋手洗い／TOTO NJ2＋手洗い</li>
+      <li>玄関ドア2つ・玄関の大判タイル1つ</li>
+    </ul>
+    <p><span class="key">②の選び方</span>：どのみち付ける物のうち、ふだんなら一番お金がかかる物を選ぶと得です。アイの施主のブログに出ていた差額の例（時期と支店で違う）：</p>
+    <ul>
+      <li>トクラス ノーレ 幅1.35m：標準から +47.1万円（2025年）</li>
+      <li>TOTO NJ2：標準から +8.4万円（2023年）</li>
+      <li>タカラの床 キープクリーンフロア：+6.4万円／TOTO のほっカラリ床：+4.2万円（2025年）</li>
+    </ul>
+    <p class="key">11/26 にアイに聞くこと</p>
+    <ol>
+      <li>②の候補それぞれの「キャンペーンでなければいくらか」</li>
+      <li>「11個の中から1つ」か「区分ごとに1つ」か</li>
+      <li>トイレは1台分か2台分か</li>
+    </ol>
+    <p class="note">アイの施主の声：「タカラなら特典が多いと言われたが、クリナップにして特典が使えなかった」（X・2025年）<span class="src"> <a href="https://x.com/pIvF9Rul7PQeOSr/status/1926890304717586894" target="_blank" rel="noopener">読む</a></span></p>
+  </div>
+
+  <div class="box decide">
+    <h3>設計に響くこと</h3>
+    <ul>
+      <li><a href="#kitchen">キッチン</a>：メーカー・天板の素材・奥行（前面収納を付けると 88.8〜105cm）・幅・ミーレの幅・コンロの機器</li>
+      <li><a href="#bath">お風呂</a>：1616 か 1620 か（浴槽は同じで、洗い場だけ約45cm違う）</li>
+      <li><a href="#toilet">トイレ</a>：手洗いの形と大きさ・壁の下地・自動水栓ならコンセント</li>
+      <li><a href="#sink">洗面台</a>：幅1.35mのまま1ボウルか、1.5m以上に広げて2ボウルか</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>まだ決めなくていいこと</h3>
+    <ul>
+      <li>色・柄</li>
+      <li>浴槽の柔らかい枕（後からバスピローで試せます）</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>気になる印を付けた物</h3>
+    <ul id="star-list"></ul>
+  </div>
+</section>
+
+<!-- ===================== キッチン ===================== -->
+<section class="view" id="v-kitchen" hidden>
+  <h2>キッチン</h2>
+  <p class="house"><strong>この家では</strong>：2階のLDKのペニンシュラ。今の図は台が約254×95cm・通路95cm。コンロは電気のスーパーラジエントヒーター。食洗機はミーレの予定。</p>
+
+  <div class="box decide">
+    <h3>決めること</h3>
+    <ul>
+      <li>メーカー（キャンペーンの4社から1つ）</li>
+      <li>天板の素材</li>
+      <li>ダイニング側の前面収納を付けるか（全部・半分・なし）</li>
+      <li>奥行：収納を付けると タカラ 105cm／LIXIL 97cm／クリナップ 98cm／トクラス 88.8cm（今の図は95cm）</li>
+      <li>幅：今の図は254cm。LIXIL は 242 か 257、クリナップは 258、トクラスは調整できる、タカラは未確認</li>
+      <li>ミーレの幅（45cm か 60cm）と、コンロの機器</li>
+    </ul>
+  </div>
+
+  <h3>ひと目で比べる</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>項目</th><th>タカラ オフェリア</th><th>LIXIL ノクト</th><th>トクラス Bbプラス</th><th>クリナップ セントロ</th></tr></thead>
+      <tbody>
+        <tr><th>天板の素材</th><td>人造大理石・クォーツ・ステンレス※</td><td>リテックス（新素材）か人造大理石。ペニンシュラはステンレス不可</td><td>人造大理石だけ</td><td>ステンレス・美コート・人工大理石・セラミック</td></tr>
+        <tr><th>シンクとのつなぎ目</th><td>人造大理石シンク（つなぎ目は未確認）</td><td>四角いシンクと薄くつなぐ</td><td>一体でつなぎ目なし</td><td>ステンレスのシンク</td></tr>
+        <tr><th>奥行（前面収納あり）</th><td>105cm <span class="plus">図より+10</span></td><td>97cm <span class="plus">+2</span></td><td>88.8cm <span class="minus">−6</span></td><td>98cm <span class="plus">+3</span></td></tr>
+        <tr><th>前面収納</th><td>収納タイプは奥行105cmだけ</td><td>扉の収納（奥行30cm）・コンロの裏だけ・なし</td><td>収納・ひざが入る形</td><td>収納・半分・なし</td></tr>
+        <tr><th>ミーレ</th><td>公式の一覧に無し（アイで入れた施主あり）</td><td>45・60cm とも公式に対応</td><td>Bbプラスは未確認</td><td>45・60cm とも可</td></tr>
+        <tr><th>ラジエント</th><td>IH2口＋ラジエントの機種あり※</td><td>公式の一覧に無し</td><td>IH2口＋ラジエントあり（上位のカタログ）</td><td>公式は3口IHだけ（入れた施主はいる）</td></tr>
+        <tr><th>キャンペーンの中身</th><td>ホーローのフード・前開きの食洗機45・人造大理石シンク・リビング側収納（奥行105）・特別価格</td><td>ミーレ45（扉を開けて乾かす機能なし）・手をかざす水栓</td><td>A案：テノールの天板・深型食洗機／B案：ニューグラーナの天板・奥行88.8・前開きの食洗機</td><td>フォルテックスの天板・ダイニング側の扉の収納・ミーレ45か「自動で洗うフード＋浄水器の水栓＋深型」</td></tr>
+        <tr><th>費用の手がかり</th><td>前面収納 13.2万円（アイ・2021年）</td><td>I型255の定価 111万円〜</td><td>フラット-X 255の定価の例 195.6万円</td><td>フラット対面 258×98 の定価 197.7万円〜</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">※タカラは公式ページが自動では開けず、検索の抜粋で確かめた内容です。</p>
+
+  <h3>天板の素材の違い</h3>
+  <div class="mat">
+    <div><b>人造大理石</b><span>シンクと一体にでき、つなぎ目の掃除が楽。熱い鍋にも比較的強い（各社の試験）。</span><span class="who">声：色の濃い食材で色がつく・黄ばむ・包丁や研磨剤で細かい傷。トクラスのグラーナは細かい傷をナイロンたわしで直せる（テノールは不可）。</span></div>
+    <div><b>クォーツ（タカラ）</b><span>石の粉を固めた物。傷がつきにくい。</span><span class="who">研磨剤入りのスポンジは使わない。「クォーツ＋ステンレスのシンクで色移りを気にしなくてよい」という声（X）。</span></div>
+    <div><b>ステンレス</b><span>熱と汚れの染み込みに一番強い。</span><span class="who">細かい傷と水滴の跡が見える。LIXIL ノクトのペニンシュラとトクラスでは選べない。</span></div>
+    <div><b>セラミック（クリナップ）</b><span>熱・傷・汚れに強い。</span><span class="who">値段が一番上がりやすい。LIXIL のセラミックを使う家族6人の家で「拭くだけで楽」（X）。</span></div>
+    <div><b>リテックス（LIXIL ノクト）</b><span>2026年4月からの新素材。紙にメラミン樹脂を染み込ませて固めた物。表面の硬さ 9H・350℃の鍋20分で変色なし（LIXIL の試験）。</span><span class="who">新しいので使った人の声がほぼ無い。</span></div>
+    <div><b>フォルテックス（クリナップ）</b><span>硬くしたアクリル系の人工大理石。ステンレスではない。</span><span class="who">ステンレスのシンクとのつなぎ目は未確認。</span></div>
+  </div>
+
+  <div class="box">
+    <h3>気をつけること</h3>
+    <ul>
+      <li><span class="key">コンロ</span>：4社の公式に出てくるのは「IH2口＋ラジエント1口」の機種だけ。全部の口がラジエントの機器にするなら、天板の穴が合うかの確認が要ります。ラジエントは IH 不可の鍋が使える一方（X <a class="src" href="https://x.com/hina232323/status/2100536046169804869" target="_blank" rel="noopener">読む</a>）、土鍋を落として天板が割れた声もあります（X <a class="src" href="https://x.com/roadster_fun/status/2109805701963096132" target="_blank" rel="noopener">読む</a>）。</li>
+      <li><span class="key">ミーレの熱</span>：アイの施主で、前面収納に入れた飴が溶けた例。ミーレの熱が伝わったらしい、とのこと（X <a class="src" href="https://x.com/kyurupopo/status/1974343915676614837" target="_blank" rel="noopener">読む</a>）。食べ物はミーレのそばに置かない方が安心。</li>
+      <li><span class="key">タカラの前面収納</span>：奥行105cmになり、図より10cm出ます。通路95cmかダイニングが狭くなります。</li>
+    </ul>
+  </div>
+
+  <h3>メーカーごと</h3>
+  <div class="cards">
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">タカラスタンダード</span>オフェリア</h3><button class="star" type="button" data-star="k-takara" data-name="キッチン：タカラ オフェリア" data-view="kitchen" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>10〜11月の契約限定・特別価格。アイの標準のキッチン。</p>
+      <p>ホーローのパネルと引き出しの底に磁石が付く。フードの部品を食洗機で洗える。</p>
+      <p class="fit">この家では：前面収納を付けると奥行105cm（+10cm）。ミーレは公式の一覧に無い。</p>
+      <ul class="voice">
+        <li class="g">機能と値段のバランスが良い <span class="who">アイの施主・2023</span> <a href="https://petithouse.net/takaraofelia/" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">前面収納はリビング側の収納として役立つ・人造大理石シンクは掃除が楽 <span class="who">アイの施主</span> <a href="https://yu-channozakkiblog.com/option/2491/" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">反対側を扉の収納にし、食洗機をミーレの大きい物に変えて大満足 <span class="who">アイの施主・2021</span> <a href="https://emachallenge.net/%E3%82%A2%E3%82%A4%E5%B7%A5%E5%8B%99%E5%BA%97%E3%81%A7%E3%83%9E%E3%82%A4%E3%83%9B%E3%83%BC%E3%83%A0%E3%82%92%E5%BB%BA%E3%81%A6%E3%81%9F%E7%A7%81%E3%81%8C%E5%AE%9F%E9%9A%9B%E3%81%AB%E4%BD%8F%E3%82%93/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">標準のステンレスのシンクは排水が流れにくい <span class="who">アイの施主</span> <a href="https://petithouse.net/takaraofelia/" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">掃除のしやすさと値段を重く見て、前面収納をしっかり取りたい人。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">LIXIL</span>ノクト（2026年版）</h3><button class="star" type="button" data-star="k-noct" data-name="キッチン：LIXIL ノクト" data-view="kitchen" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>ミーレ45cm・手をかざす水栓。</p>
+      <p>2026年4月に作り直し。新しい天板リテックス・四角いシンク・ミーレがきれいに納まる。</p>
+      <p class="fit">この家では：奥行97cm（+2cm）で前面収納を付けられる。ミーレは確実。ラジエントは公式の一覧に無いので確認が要る。</p>
+      <ul class="voice">
+        <li class="g">ミーレ60cmで4人分を鍋までまとめて洗える <span class="who">施主・前の型</span> <a href="https://nosuyo.com/noct-review/" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">ペニンシュラが標準で、無駄のないデザイン <span class="who">アイの施主</span> <a href="https://yu-channozakkiblog.com/ai-komuten-kitchen/8255/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">熱いフライパンで天板に白い丸・ミーレは太ももが触れると電源が入る <span class="who">施主・前の型の天板</span> <a href="https://nosuyo.com/noct-review/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">前開きの食洗機は45cmでも実物は大きく見える <span class="who">計画中・X</span> <a href="https://x.com/kokonoka_house/status/2033806727511154847" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">ミーレを確実に入れて、図の奥行をほぼ変えずに前面収納も付けたい人。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">トクラス</span>Bbプラス（A案・B案）</h3><button class="star" type="button" data-star="k-toclas" data-name="キッチン：トクラス Bbプラス" data-view="kitchen" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>A案：テノールの天板・深型食洗機／B案：ニューグラーナの天板・奥行88.8cm・前開きの食洗機。</p>
+      <p>天板とシンクが一体でつなぎ目なし。人造大理石の専門で、天板が厚い。</p>
+      <p class="fit">この家では：奥行88.8cmで、図より6cm浅く通路が広がる。ステンレスの天板は無い。ミーレとラジエントが入るかは未確認。</p>
+      <ul class="voice">
+        <li class="g">人造大理石の天板が他社の2倍近い厚さ・テノールも選べた <span class="who">アイの施主・2022</span> <a href="https://ameblo.jp/toyotoyo13/entry-12745452641.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">天板とシンクにつなぎ目がなく掃除しやすい <span class="who">施主（前のシリーズ）</span> <a href="https://kategaku-note.com/kakei/tokurasu/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">色の濃い食材ですぐ色がつく・コップを落として小さな穴 <span class="who">同じ施主</span> <a href="https://kategaku-note.com/kakei/tokurasu/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">人工大理石の天板が薄く黄ばんできたのが一番の後悔 <span class="who">メーカー不明・X</span> <a href="https://x.com/250701a/status/2114355966003261672" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">拭き掃除を楽にしたく、通路を少しでも広く取りたい人。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">クリナップ</span>セントロ</h3><button class="star" type="button" data-star="k-centro" data-name="キッチン：クリナップ セントロ" data-view="kitchen" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>フォルテックスの天板・ダイニング側の扉の収納・ミーレ45か「自動で洗うフード＋浄水器の水栓＋深型」。</p>
+      <p>クリナップの一番上。天板を5種類から選べる。</p>
+      <p class="fit">この家では：奥行98cm（+3cm）・幅258cm。ミーレ45・60cm可。ラジエントは公式に無い（入れた施主はいる）。</p>
+      <ul class="voice">
+        <li class="g">引き出しが静か・品質は値段以上 <span class="who">施主・2025</span> <a href="https://ietateruhito.com/centro-steida-gengaku/" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">収納が使いやすく、手をかざす水栓が便利 <span class="who">施主・2020</span> <a href="https://www.funaki-kk.co.jp/2020/07/blog-968/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">対面にするだけで定価が約50万円上がる・リビング側収納は高い <span class="who">施主・2025</span> <a href="https://ietateruhito.com/centro-steida-gengaku/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">ステンレスは傷がつき、水滴を拭かないと跡が残る <span class="who">施主・2020</span> <a href="https://www.funaki-kk.co.jp/2020/07/blog-968/" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">天板の素材を一番広く選びたい人。費用は上がりやすい。</p>
+    </article>
+  </div>
+
+  <div class="box ask">
+    <h3>アイに聞くこと</h3>
+    <ol>
+      <li>スーパーラジエントヒーターは「IH2口＋ラジエント」か、全部ラジエントか。4社の天板に入るか</li>
+      <li>タカラ：ミーレを入れられるか・差額。幅の選択肢。前面収納（奥行105cm）で通路95cmがどうなるか</li>
+      <li>トクラス：B案はBbプラスか上位のコラージアか。ミーレとラジエントが入るか</li>
+      <li>ノクト・セントロ：ラジエントを選べるか。前面収納の差額</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== お風呂 ===================== -->
+<section class="view" id="v-bath" hidden>
+  <h2>お風呂</h2>
+  <p class="house"><strong>この家では</strong>：2階のお風呂。今の図は1620（縦向き）。</p>
+
+  <div class="box decide">
+    <h3>決めること</h3>
+    <ul>
+      <li>広さ：1616 か 1620（間の1618もある）。トクラスは1620が無く1621</li>
+      <li>メーカー（キャンペーン②の候補4社）</li>
+      <li>2階に置く時の受け台・防水・床の梁（アイに確認）</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>1616 と 1620 の違い</h3>
+    <div class="fig" role="img" aria-label="1616と1620の違いの目安の図。浴槽は同じ大きさで、洗い場の奥行が94cmと139cmで違う">
+      <svg viewBox="0 0 400 270" xmlns="http://www.w3.org/2000/svg">
+        <text x="30" y="22" class="t-strong">1616</text>
+        <rect class="tub" x="30" y="34" width="140" height="68" rx="4"/>
+        <text x="100" y="74" text-anchor="middle">浴槽</text>
+        <rect class="wash" x="30" y="102" width="140" height="82" rx="4"/>
+        <text x="100" y="140" text-anchor="middle">洗い場</text>
+        <text x="100" y="162" text-anchor="middle">約94cm</text>
+        <text x="220" y="22" class="t-strong">1620（1621）</text>
+        <rect class="tub" x="220" y="34" width="140" height="68" rx="4"/>
+        <text x="290" y="74" text-anchor="middle">浴槽（同じ）</text>
+        <rect class="wash" x="220" y="102" width="140" height="122" rx="4"/>
+        <text x="290" y="160" text-anchor="middle">洗い場</text>
+        <text x="290" y="182" text-anchor="middle">約139cm</text>
+        <text x="200" y="256" text-anchor="middle">トクラスの公式の寸法をもとにした目安の図</text>
+      </svg>
+    </div>
+    <ul>
+      <li><span class="key">浴槽は同じ大きさ</span>（トクラス公式：どちらも 78×160cm・満水280L）。広くなるのは洗い場だけで、約45cm</li>
+      <li>定価の差：TOTO サザナ +26.8万円／トクラス +29.6〜31.8万円。アイでの差額は見積もりで確認（業者の目安は15〜25万円）</li>
+      <li>一番多いのは1616。1620は、小さな子どもと一緒に洗う年数が長い家や、介助を見込む家</li>
+      <li>1620の後悔：子どもが大きくなると広すぎる・掃除が増える・その分を脱衣所に回せばよかった <a class="src" href="https://tenmaruco.xsrv.jp/bathroom-size" target="_blank" rel="noopener">読む</a></li>
+      <li>1616の後悔：幼児2人と入る数年間が窮屈 <a class="src" href="https://ouchi-dukuri.com/bathroom-1616/" target="_blank" rel="noopener">読む</a>／子どもと入ると窮屈になってきた（X） <a class="src" href="https://x.com/watarase_TM/status/2111054266999906692" target="_blank" rel="noopener">読む</a></li>
+      <li>4社のうち、1620で浴槽そのものを大きくできるのは LIXIL のミナモワイド浴槽と、タカラのワイド浴槽（ベンチ付き）だけ（アイで選べるかは確認が要る）</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>浴槽の枕は要る？</h3>
+    <ul>
+      <li>柔らかい枕を付けられる物は、キャンペーンの4社とも見当たりません</li>
+      <li>TOTO サザナは「ゆるリラ浴槽」で、浴槽の形が頭と首を支えます（標準）</li>
+      <li>LIXIL は「エコベンチ浴槽」に枕の形の所があります。ただしキャンペーンの人造大理石の浴槽はミナモ浴槽だけ</li>
+      <li>柔らかい枕は後からバスピロー（数百〜数千円）で試せます。厚い物は乾かずにぬめる・吸盤が落ちる声 <a class="src" href="https://yutoritime.com/bath-pillow-recommended/" target="_blank" rel="noopener">読む</a></li>
+      <li class="key">12月に決めなくてよい</li>
+    </ul>
+  </div>
+
+  <h3>ひと目で比べる</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>項目</th><th>タカラ リラクシア</th><th>LIXIL AX（≒リデア）</th><th>トクラス エブリィ</th><th>TOTO サザナ</th></tr></thead>
+      <tbody>
+        <tr><th>床</th><td>キープクリーンフロア（磁器タイル・下に保温材）</td><td>キレイサーモフロアか単色（要確認）</td><td>うつくしフロア（溝で水が流れる）</td><td>ほっカラリ床（柔らかく冷たくない）</td></tr>
+        <tr><th>浴槽</th><td>FRP（人造大理石は追加）</td><td>保温浴槽。人造大理石はミナモ浴槽だけ</td><td>FRP（人造大理石は少しの追加）</td><td>魔法びん浴槽（4時間以上あたたかい）</td></tr>
+        <tr><th>換気暖房乾燥機</th><td>書いていない</td><td>書いていない</td><td>あり</td><td>あり（三乾王）</td></tr>
+        <tr><th>照明</th><td>ダウンライト3灯</td><td>パネルの照明</td><td>LED 2灯</td><td>1灯</td></tr>
+        <tr><th>サイズ</th><td>1616・1620※</td><td>1616・1620</td><td>1616・1621（1620なし）</td><td>1616・1620</td></tr>
+        <tr><th>弱い所（声）</th><td>冬の最初の一歩が冷たい・水垢が目立つ</td><td>床は暖かくはない・目地に赤カビ</td><td>床の凹凸で拭きにくい・賃貸っぽい見た目</td><td>週1回洗わないとピンクの汚れ・物を落として床に穴</td></tr>
+        <tr><th>費用の手がかり</th><td>キープクリーンフロア +6.4万・人造大理石の浴槽 +26.7万（アイの施主）</td><td>—</td><td>人造大理石の浴槽 +1.2万（アイの施主）</td><td>ほっカラリ床 +4.2万（アイの施主）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">※タカラは公式ページが自動では開けず、検索の抜粋で確かめた内容です。キャンペーンで込みになる物（床・照明・乾燥機など）は冊子のとおり。</p>
+
+  <h3>メーカーごと</h3>
+  <div class="cards">
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">タカラスタンダード</span>リラクシア</h3><button class="star" type="button" data-star="b-takara" data-name="お風呂：タカラ リラクシア" data-view="bath" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>全面の飾りパネル・磁石の鏡・ダウンライト3灯・キープクリーンフロア。</p>
+      <p>壁がホーローで磁石が付く＝棚を無くして物を壁に付けられる。</p>
+      <ul class="voice">
+        <li class="g">床の高級感・ホーローで掃除しやすく磁石がしっかり付く <span class="who">アイの施主・2025</span> <a href="https://ameblo.jp/ririri-ie/entry-12885488146.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">保温がよく、床はお湯をかけると冷たくない <span class="who">X</span> <a href="https://x.com/lemon__321/status/1843649728501993955" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">床を3年：黒カビはほぼ出ないが、水垢がはっきり見え、水はけの悪い所にピンクのぬめり <span class="who">施主・2023</span> <a href="https://cherry-blossom0123.com/takarastandard-bath-keepclean-floor/" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">壁に物を付けて棚を無くし、掃除を楽にしたい人。冬の床は浴室暖房で補う。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">LIXIL</span>システムバスルーム AX</h3><button class="star" type="button" data-star="b-lixil" data-name="お風呂：LIXIL AX" data-view="bath" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>パネルの照明・浴槽をパールクォーツ（人造大理石）に（ミナモ浴槽だけ）。</p>
+      <p>住宅会社向けの型で、部品は一般向けのリデアと同じ（保温浴槽・くるりんポイ排水口）。</p>
+      <ul class="voice">
+        <li class="g">排水口と外せるカウンターで掃除しやすい・磁石の壁 <span class="who">別の住宅会社の AX・2025</span> <a href="https://value-labo.net/archives/2923" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">床は滑りにくく翌朝ほぼ乾く <span class="who">前の型の施主・2022</span> <a href="https://happylifefamchannel.com/%E3%82%AD%E3%83%AC%E3%82%A4%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%95%E3%83%AD%E3%82%A2%E5%8D%8A%E5%B9%B4%E4%BD%BF%E3%81%A3%E3%81%9F%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">床は暖かくはない・目地に赤カビ <span class="who">同じ施主</span> <a href="https://happylifefamchannel.com/%E3%82%AD%E3%83%AC%E3%82%A4%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%95%E3%83%AD%E3%82%A2%E5%8D%8A%E5%B9%B4%E4%BD%BF%E3%81%A3%E3%81%9F%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">特に目立つ点が見つからず候補から外した <span class="who">アイの施主・2025</span> <a href="https://ameblo.jp/ririri-ie/entry-12885488146.html" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">浴槽の形を選びたい人（枕の形の所があるエコベンチ浴槽・1620のワイド浴槽）。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">トクラス</span>エブリィ</h3><button class="star" type="button" data-star="b-toclas" data-name="お風呂：トクラス エブリィ" data-view="bath" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>換気暖房乾燥機・LED 2灯・網戸・スライドバー・ドアの外のタオル掛け。</p>
+      <p>浴槽はなめらかで汚れが落ちやすい。髪の毛を中央に集める排水口。</p>
+      <ul class="voice">
+        <li class="g">人造大理石の浴槽が +1.2万円で入る・壁の色が良い <span class="who">アイの施主・2025</span> <a href="https://ameblo.jp/ririri-ie/entry-12885488146.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">床（うつくしフロア）が賃貸のように見えて残念 <span class="who">同じ施主</span> <a href="https://ameblo.jp/ririri-ie/entry-12885488146.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">床の凹凸で水を拭き取りにくく、夏にピンクのぬめり <span class="who">施主・2021</span> <a href="https://ameblo.jp/kmnr917710/entry-12701498757.html" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="fit">1620は無く1621（内寸が5cm長い）。図の枠に入るかアイに確認。</p>
+      <p class="for">安く人造大理石の浴槽にしたい人。乾燥機付きで洗濯物も干したい人。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">TOTO</span>サザナ</h3><button class="star" type="button" data-star="b-toto" data-name="お風呂：TOTO サザナ" data-view="bath" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>魔法びん浴槽・ほっカラリ床・換気暖房乾燥機（三乾王）・節水シャワー。</p>
+      <p>床が柔らかく冷たくない。お湯が冷めにくい。浴槽の形で頭を支える。</p>
+      <ul class="voice">
+        <li class="g">床が柔らかく滑りにくく暖かい・小さな子の家に最高 <span class="who">アイの施主・2025</span> <a href="https://ameblo.jp/ririri-ie/entry-12885488146.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">今の型は床の汚れが落ちやすい（週1の掃除は要る） <span class="who">利用者・2026</span> <a href="https://note.com/reform_orz/n/n78566479594a" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">引き渡し2週間で、シャンプーボトルを落として床に穴 <span class="who">X・2026</span> <a href="https://x.com/Koron1958163/status/2095122324190384197" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">シャワーより掃除に時間がかかる・カウンターが邪魔 <span class="who">X・2026</span> <a href="https://x.com/hanakosmo/status/2093153090212126745" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">床の柔らかさと冷たくなさ、お湯の冷めにくさを重く見る人（入る時間がずれる家）。</p>
+    </article>
+  </div>
+
+  <div class="box ask">
+    <h3>アイに聞くこと</h3>
+    <ol>
+      <li>1616 から 1620（トクラスは1621）にした時の差額を、メーカーごとに</li>
+      <li>トクラスの1621が、図の1620の枠にそのまま入るか</li>
+      <li>2階に置く受け台・防水・床の梁と、その追加費用</li>
+      <li>LIXIL AX の床はキレイサーモフロアか</li>
+      <li>キャンペーンで込みになる床や乾燥機が、1620でも同じ扱いか</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== トイレ ===================== -->
+<section class="view" id="v-toilet" hidden>
+  <h2>トイレ</h2>
+  <p class="house"><strong>この家では</strong>：1階と2階に1つずつ。どちらも小さめの部屋で、蛇口付きの手洗いを別に置く予定。</p>
+
+  <div class="box decide">
+    <h3>決めること</h3>
+    <ul>
+      <li>便器の形（タンク付きか、タンクの無い形か）</li>
+      <li>手洗いの形（壁付け・埋め込み・カウンター）と大きさ＝部屋の幅と奥行</li>
+      <li>壁の下地（手洗いを付ける壁に補強の板）と、水と排水の立ち上げ</li>
+      <li>水栓の種類（ハンドル・自動・お湯の出る自動）＝自動ならコンセントの位置</li>
+      <li>2階の水の勢い（タンクの無い形は水道の勢いで流す）</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>キャンペーンの2つはどちらも「上に手洗いが無い形」</h3>
+    <p>だから手洗いを別に置く予定とよく合います。手洗いの分の配管・壁の補強・（自動なら）コンセントを、間取りの段階で決めます。</p>
+  </div>
+
+  <h3>ひと目で比べる</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>項目</th><th>LIXIL ベーシアハーモJ ＋ コフレル スリム</th><th>TOTO NJ2 ＋ コンフォート</th></tr></thead>
+      <tbody>
+        <tr><th>便器の形</th><td>タンクレス（幅42×奥行64cm・前の資料）</td><td>タンクレス（奥行は未確認）</td></tr>
+        <tr><th>掃除の工夫</th><td>便座を上げて隙間を拭ける（J4G・J3G）。縁は浅いが付いている（施主）</td><td>フチなし・便座を上げられる・座るとミストで汚れを付きにくく</td></tr>
+        <tr><th>ふたの自動開閉</th><td>一番上の J4G だけ</td><td>あり（施主）</td></tr>
+        <tr><th>停電の時</th><td>別売の電池キットで大だけ流せる</td><td>流せる（やり方は未確認）</td></tr>
+        <tr><th>2階の水の勢い</th><td>流れている時0.07MPa以上が要る。足りなければ別売のブースター（3.5万円）</td><td>未確認</td></tr>
+        <tr><th>手洗い</th><td>壁付けの細い棚形・白だけ</td><td>カウンター＋四角い置くボウル＋下に収納</td></tr>
+        <tr><th>手洗いの大きさと部屋</th><td>棚だけなら幅31×奥行20cm。カウンター付きは部屋の幅76cm以上</td><td>S：0.4坪以上・カウンター奥行9.5cm／M：0.5坪以上・15cm。長さ120〜160cm</td></tr>
+        <tr><th>水栓</th><td>ハンドル（自動・お湯の自動は +1.6万円〜）</td><td>ハンドル（自動もある）</td></tr>
+        <tr><th>費用の手がかり</th><td>サティスSより7〜8万円安い（施主の見積もり）</td><td>アイで標準から +8.4万円（施主・2023）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>手洗いの水栓の違い</h3>
+  <div class="mat">
+    <div><b>ハンドル</b><span>一番安く、壊れにくい。</span><span class="who">洗った手でまた触る。</span></div>
+    <div><b>自動</b><span>手をかざすと出る。コンセントが要る。</span><span class="who">ボウルを拭くと手に反応して水が出て後悔、の声 <a class="src" href="https://i-smart-kosuke.com/blog-entry-283.html" target="_blank" rel="noopener">読む</a></span></div>
+    <div><b>お湯の出る自動</b><span>冬の手洗いが楽。小さな電気の湯沸かしが付く（350W）。アース付きのコンセントが要る。</span><span class="who">電気代は月435〜508円（LIXIL の前の資料の試算・4人家族）。</span></div>
+    <div><b>小さいボウルの水はね</b><span>強く洗うと床に飛ぶ声（コフレル）。</span><span class="who">泡の混じった水（TOTO）は跳ねにくい、という声。</span></div>
+  </div>
+
+  <div class="box">
+    <h3>手洗いを別に置く時に合う便器</h3>
+    <ul>
+      <li>上に手洗いが無い形：タンクレス（ハーモJ・NJ2・ネオレスト・サティス・アラウーノ）か、手洗い無しのタンク（ピュアレストEX・GG）</li>
+      <li>タンクレスは2階の水の勢いの確認が要ります。ネオレストはタンクとポンプ入りで弱い勢いでも流せます</li>
+      <li>「防災の時はタンクが1つあった方がいい」と設計士に言われ、タンク付きにした施主（X） <a class="src" href="https://x.com/Muku_Life_Blog/status/2095521865083318784" target="_blank" rel="noopener">読む</a></li>
+      <li>アイの標準（TOTO ZJ／LIXIL ベーシア・タンク付き）を手洗い無しで頼み、別に手洗いを付けた施主もいます（2021） <a class="src" href="https://emachallenge.net/bath-toilet-dresser/" target="_blank" rel="noopener">読む</a></li>
+    </ul>
+  </div>
+
+  <h3>メーカーごと</h3>
+  <div class="cards">
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">LIXIL</span>ベーシアハーモJ＋コフレル スリム</h3><button class="star" type="button" data-star="t-lixil" data-name="トイレ：LIXIL ハーモJ＋コフレル" data-view="toilet" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>便器＋壁付けの手洗い（ハンドル水栓・白だけ）。</p>
+      <p>値段を抑えたタンクレス。手洗いは薄くて狭いトイレに向く。</p>
+      <ul class="voice">
+        <li class="g">機能は必要十分・サティスSより7〜8万円安い <span class="who">施主・2021</span> <a href="https://rikubolog.com/2021/03/13/tankless_toilet_j/" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">手洗いの掃除がすごく簡単 <span class="who">施主</span> <a href="https://i-smart-kosuke.com/blog-entry-87.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">浅めだが縁が付いていて、掃除が面倒 <span class="who">施主</span> <a href="https://ameblo.jp/yumetotochabi/entry-12621469045.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">手洗いのボウルが小さく床に水しぶき・ハンドソープが置けない <span class="who">施主</span> <a href="https://miyabinahouse.hatenablog.com/entry/washbowl" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">値段を抑えてタンクレスにし、狭いトイレに薄い手洗いを置きたい人。2階は水の勢いを測ってから。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">TOTO</span>NJ2＋コンフォート</h3><button class="star" type="button" data-star="t-toto" data-name="トイレ：TOTO NJ2＋コンフォート" data-view="toilet" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>標準のトイレから NJ2 へ＋カウンター付きの手洗い（四角い置くボウル・ハンドル水栓）。</p>
+      <p>住宅会社向けのタンクレス。ふたが自動で開け閉めし、フチが無い。</p>
+      <ul class="voice">
+        <li class="g">見た目がすっきり・タンクレスとしてはかなり安い <span class="who">アイの施主・2023</span> <a href="https://home-create-life.com/toilet-totonj/" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">ふたが自動で手が汚れない・フチなしで掃除が楽 <span class="who">施主・2022</span> <a href="https://www.pana-ouchi.com/?p=822" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">新築で、便座の裏への飛びはねが今までで一番多い <span class="who">知恵袋・2025</span> <a href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12318574152" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">見た目をすっきりさせ、ふたの自動開閉は欲しいが、上の機能（除菌水など）は要らない人。</p>
+    </article>
+  </div>
+
+  <div class="box ask">
+    <h3>アイに聞くこと</h3>
+    <ol>
+      <li>キャンペーンのトイレは1台分か2台分か</li>
+      <li>NJ2 の奥行・2階で要る水の勢い・停電の時の流し方</li>
+      <li>ハーモJ は J3G か J4G か</li>
+      <li>2階の水の勢い（足りなければブースター）</li>
+      <li>コンフォートは S か M か</li>
+      <li>標準のトイレを「手洗い無し＋別の手洗い」にした時の差額</li>
+      <li>自動・お湯の自動の水栓にする差額と、コンセントの位置</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== 洗面台 ===================== -->
+<section class="view" id="v-sink" hidden>
+  <h2>洗面台</h2>
+  <p class="house"><strong>この家では</strong>：2階のホール（廊下）に面した壁ぞい。脱衣所とは別。今の図は幅1.35m。物を隠してすっきり見せたい。脱衣所の作業台にも鏡とコンセントを付ける予定（11/9 に決めた）。</p>
+
+  <div class="box decide">
+    <h3>決めること</h3>
+    <ul>
+      <li>幅：1.35m のままか、広げるか</li>
+      <li>ボウルの数：1つか2つか</li>
+      <li>奥行（ノーレは60cmと読める・未確認）</li>
+      <li>隠す収納：扉付きの3面鏡・引き出し</li>
+    </ul>
+  </div>
+
+  <div class="box alert">
+    <h3>幅1.35mのままでは、既製品の2ボウルは入りません</h3>
+    <p>2ボウルが付くのは、トクラス ノーレと LIXIL ルミシスが幅1.5m から、パナソニック ラシスと EIDAI アクアージュフロートが1.65m です（各社の公式）。</p>
+  </div>
+
+  <h3>4つの道</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>道</th><th>幅</th><th>中身</th><th>図への影響</th></tr></thead>
+      <tbody>
+        <tr><th>A 1ボウル＋横に収納</th><td>1.35m</td><td>ノーレ 1.35m（アイの施主の実例：引き出し＋足元が空いた棚）・標準の90cm＋横の棚 約45cm など</td><td>なし</td></tr>
+        <tr><th>B 造作で2ボウル</th><td>1.35m</td><td>カウンターにボウルを2つ。1人67.5cm。ボウルの間の平らな所はほぼ残らない（約20〜27cm）</td><td>なし（配管は2組）</td></tr>
+        <tr><th>C 広げて2ボウル</th><td>1.5〜1.65m</td><td>+15cm でノーレ・ルミシスの2ボウル／+30cm でラシス・フロートの2ボウル</td><td class="plus">あり（12月までに）</td></tr>
+        <tr><th>D 大きい1ボウル</th><td>1.35m</td><td>幅58cmの大きいボウルで2人が並ぶ</td><td>なし</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>キャンペーンの2つ</h3>
+  <div class="cards">
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">トクラス</span>ノーレ（幅1.2m）</h3><button class="star" type="button" data-star="s-noare" data-name="洗面台：トクラス ノーレ" data-view="sink" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>幅1.2m（奥行は60cmと読める）・人造大理石のカウンターとボウル・排水口に金具なし・鏡は1面。</p>
+      <p class="fit">この家では：1.35m に入る（残り15cm）。キャンペーンの鏡は扉が無く物が見えるので、隠すなら木製3面鏡（扉の中に棚とコンセント）に替える。差額は未確認。</p>
+      <p>アイの施主が1.35mで採用：1ボウル＋2段引き出し＋足元の空いた棚。標準からの差額 +47.1万円。3面鏡は別メーカーの物で +12.3万円（2025年）。</p>
+      <ul class="voice">
+        <li class="g">造作家具のような雰囲気・質感がよく満足（ただ値段は高め） <span class="who">アイの施主・住んだ後</span> <a href="https://ameblo.jp/ririri-ie/entry-12928148955.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="g">掃除を優先して、置くボウルでなく一体のボウルに <span class="who">同じ施主</span> <a href="https://ameblo.jp/ririri-ie/entry-12888861232.html" target="_blank" rel="noopener">読む</a></li>
+        <li class="b">床まである形だと圧迫感が出そうでやめた <span class="who">検討した人・2025</span> <a href="https://ameblo.jp/guu-taraco/entry-12951236235.html" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">1.35m の図を動かさず、質感のよい1ボウルにしたい人（隠すなら鏡を3面鏡に）。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h3><span class="maker">EIDAI</span>アクアージュフロート（幅1.2m・1.6m）</h3><button class="star" type="button" data-star="s-float" data-name="洗面台：EIDAI アクアージュフロート" data-view="sink" aria-pressed="false">☆ 気になる</button></div>
+      <p><span class="camp">キャンペーン</span>浮いた形の洗面台。下に付けるボウルか置くボウル。カウンターはメラミン。鏡は追加。</p>
+      <p class="fit">この家では：1.6m は図に入らない（25cm はみ出す）。カウンターの下に収納が無く、排水の部品が見える（公式）＝隠したい希望と逆。</p>
+      <p>値段は安め（定価 幅1.2m・メラミンで22.1万円〜）。使った人の声は見つかりませんでした。</p>
+      <ul class="voice">
+        <li class="b">メラミンのカウンターは、濡れたまま放置すると水垢が落ちにくい <span class="who">アイの施主・別の洗面</span> <a href="https://8hachi-blog.com/%E3%80%90%E3%82%A2%E3%82%A4%E3%82%AB%E3%81%AE%E6%B4%97%E9%9D%A2%E5%AE%9F%E9%9A%9B%E3%81%A9%E3%81%86%EF%BC%9F%E3%80%91%E5%8D%8A%E9%80%A0%E4%BD%9C%E6%B4%97%E9%9D%A2%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA/" target="_blank" rel="noopener">読む</a></li>
+      </ul>
+      <p class="for">費用を抑えて軽い見た目にしたく、物はほかに置ける人（ホールから下が見えてよい人）。</p>
+    </article>
+  </div>
+
+  <h3>ホールから見た「隠せる度」</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>候補</th><th>鏡まわり</th><th>下まわり</th><th>隠せる度</th></tr></thead>
+      <tbody>
+        <tr><th>ノーレ＋木製3面鏡</th><td>扉の中に棚・コンセント</td><td>引き出し・扉付きの横の収納</td><td>高い</td></tr>
+        <tr><th>LIXIL ルミシス</th><td>3〜5面のミラーキャビネット</td><td>キャビネット</td><td>高い</td></tr>
+        <tr><th>パナソニック ラシス</th><td>3面鏡・5面鏡（幅1.35mあり）</td><td>キャビネットかオープン</td><td>キャビネットなら高い</td></tr>
+        <tr><th>アイの標準（TOTO オクターブなど）</th><td>3面鏡の裏に収納</td><td>引き出し・扉</td><td>隠せる。中がプラスチックで「ショボい」声</td></tr>
+        <tr><th>ノーレ（キャンペーンのまま）</th><td>1面鏡（扉なし）</td><td>引き出し</td><td>鏡の所は見える</td></tr>
+        <tr><th>アクアージュフロート</th><td>1面鏡＋ガラスの棚</td><td>収納なし・排水の部品が見える</td><td>低い</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>2ボウルの声</h3>
+    <ul class="voice">
+      <li class="g">朝晩の渋滞が無くなり、ホテルのよう（造作で約50万円弱） <a href="https://ameblo.jp/mizu-708/entry-12760065443.html" target="_blank" rel="noopener">読む</a></li>
+      <li class="g">子どもが大きくなると朝に取り合いになるので2ボウルに <a href="https://yushi1205.muragon.com/entry/71.html" target="_blank" rel="noopener">読む</a></li>
+      <li class="b">掃除が2倍・置くボウルでカウンターが濡れる <a href="https://taninouchi.com/wash-basin/" target="_blank" rel="noopener">読む</a></li>
+      <li class="b">「いずれ使わなくなる」と言われ1ボウルに。平らな面がとても重宝 <a href="https://ameblo.jp/taka06301975/entry-12583179464.html" target="_blank" rel="noopener">読む</a></li>
+      <li class="b">2ボウルは掃除が地味に大変（X） <a href="https://x.com/study_around40/status/2107602172833903011" target="_blank" rel="noopener">読む</a></li>
+      <li class="b">使うのは夫婦2人なので、片側を平らにする手もあった（ルミシスの2ボウル） <a href="https://ameblo.jp/yuuuudai71/entry-12785194673.html" target="_blank" rel="noopener">読む</a></li>
+    </ul>
+    <p class="note">目安の意見：135cm は2人にほどよい幅。150cm なら2ボウルでも平らな面が残る <a class="src" href="https://note.com/jutakuadviser/n/n8142b713d27e" target="_blank" rel="noopener">読む</a></p>
+  </div>
+
+  <div class="box ask">
+    <h3>アイに聞くこと</h3>
+    <ol>
+      <li>ノーレを1.35m にする方法と、木製3面鏡に替える差額</li>
+      <li>ノーレの奥行（60cm か）と、ホールの通路への響き</li>
+      <li>フロートの幅1.6m は2ボウルか</li>
+      <li>神奈川の今の標準の洗面台と、2階に置く追加費用</li>
+      <li>2ボウルにする時の配管2組の費用</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <p>2026年11月17日に調べました。出どころは、メーカーの公式ページ・アイ工務店 神奈川のキャンペーン冊子・施主のブログ・X です。</p>
+  <p>タカラの公式ページは自動では開けず、検索の抜粋で確かめました（※の所）。X の投稿は検索で見つけたもので、1件ずつ開いては確かめていません。金額は定価か、施主のブログに出ていた当時の額です。</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var views=['top','kitchen','bath','toilet','sink'];
+  var links=document.querySelectorAll('nav.tabs a');
+  function show(){
+    var h=(location.hash||'').slice(1);
+    if(views.indexOf(h)<0) h='top';
+    views.forEach(function(v){var s=document.getElementById('v-'+v); if(s) s.hidden=(v!==h);});
+    links.forEach(function(a){ if(a.getAttribute('data-view')===h){a.setAttribute('aria-current','page');}else{a.removeAttribute('aria-current');} });
+  }
+  window.addEventListener('hashchange',function(){show(); window.scrollTo(0,0);});
+  show();
+
+  var KEY='hayama-mizumawari-stars';
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'[]'); }catch(e){ return []; } }
+  function save(list){ try{ localStorage.setItem(KEY,JSON.stringify(list)); }catch(e){} }
+  var stars=load();
+  var buttons=document.querySelectorAll('button.star');
+  function render(){
+    buttons.forEach(function(b){
+      var on=stars.indexOf(b.getAttribute('data-star'))>=0;
+      b.setAttribute('aria-pressed',on?'true':'false');
+      b.textContent=on?'★ 気になる':'☆ 気になる';
+    });
+    var ul=document.getElementById('star-list');
+    ul.textContent='';
+    buttons.forEach(function(b){
+      if(stars.indexOf(b.getAttribute('data-star'))<0) return;
+      var li=document.createElement('li');
+      var a=document.createElement('a');
+      a.href='#'+b.getAttribute('data-view');
+      a.textContent=b.getAttribute('data-name');
+      li.appendChild(a); ul.appendChild(li);
+    });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-star'); var i=stars.indexOf(id);
+      if(i>=0){stars.splice(i,1);}else{stars.push(id);}
+      save(stars); render();
+    });
+  });
+  render();
+})();
+</script>
+</body></html>
